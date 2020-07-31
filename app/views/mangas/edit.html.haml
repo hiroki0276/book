@@ -1,0 +1,12 @@
+%h2 マンガ編集ページ
+= link_to "トップページに戻る", :root, class: 'Button'
+
+
+= form_with model: @manga, local: true do |f|
+  = f.text_field :title, placeholder: "タイトル"
+  = f.text_field :author, placeholder: "作者"
+  = f.text_field :volume, placeholder: "巻数"
+  = f.text_area :memo, placeholder: "メモ", class: "edit_memo"
+  = f.submit "Save"
+
+  

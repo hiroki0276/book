@@ -1,0 +1,11 @@
+-# - current_user.mangas.each do |manga| 
+-#   .manga 
+-#     .input
+-#       = link_to '編集', edit_manga_path(manga.id)
+-#       = link_to '削除', manga_path(manga.id), method: :delete,data: { confirm: "【確認】マンガを削除してもよろしいですか？" }
+-#     .test タイトル/作者/巻数
+-#     = manga.title.truncate(20, omission: '...')
+-#     = manga.author
+-#     = manga.volume
+-#     = manga.user_id
+-#     .memo= manga.memo.truncate(45, omission: '...')

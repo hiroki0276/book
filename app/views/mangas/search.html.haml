@@ -1,0 +1,18 @@
+.form
+  = form_with url: search_mangas_path, local: true, method: :get, class: "form" do |form|
+    = form.text_field :keyword, placeholder: "マンガを検索する　＊タイトルか作者を入力", class: "search-input"
+    = form.submit "検索", class: "search-btn" 
+    = link_to "トップページに戻る", :root, class: 'Button1'
+
+
+- @mangas.each do |manga|
+  .manga 
+    .input
+      = link_to '編集', edit_manga_path(manga.id)
+      = link_to '削除', manga_path(manga.id), method: :delete,data: { confirm: "【確認】マンガを削除してもよろしいですか？" }
+    .test タイトル/作者/巻数
+    = manga.title.truncate(20, omission: '...')
+    = manga.author
+    = manga.volume
+    = manga.user_id
+    .memo= manga.memo.truncate(45, omission: '...')
