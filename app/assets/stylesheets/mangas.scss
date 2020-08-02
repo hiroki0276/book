@@ -97,3 +97,18 @@ a {
   float: right;
 
 }
+
+
+#newsList {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}
+#newsList img {
+  width: 200px;
+  height: 150px;
+}
+.content {
+  width: 200px;
+  border: 1px solid #aaa;
+}

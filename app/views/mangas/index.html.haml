@@ -2,6 +2,7 @@
 .header
   .weather
     
+    
     天気欄<br> タスク <br>検索ユーザー制限<br>検索欄作成<br>天気欄作成<br>編集画面、新規作成画面等ビューの調整
     = current_user.id
   .info
@@ -30,7 +31,10 @@
         .test タイトル/作者/巻数
         = manga.title.truncate(20, omission: '...')
         = manga.author
+        /
         = manga.volume
+        %span<>
+        巻
         = manga.user_id
         .memo= manga.memo.truncate(45, omission: '...')
         
