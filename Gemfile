@@ -65,3 +65,6 @@ gem 'nokogiri'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'jquery-rails'
 
+group :production do
+  gem 'pg'
+end
