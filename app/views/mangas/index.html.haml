@@ -4,9 +4,9 @@
     -# 天気欄<br> タスク <br>検索ユーザー制限<br>検索欄作成<br>天気欄作成<br>編集画面、新規作成画面等ビューの調整
 
   .info
-    .login
+    .btn-cross
       = link_to current_user.name, edit_user_path(current_user) 
-    .new
+    .btn-cross
       = link_to 'マンガ新規作成', new_manga_path(current_user)
 
 .form
@@ -34,6 +34,8 @@
         %span<>
         巻
         -# = manga.user_id
-        .memo= manga.memo.truncate(45, omission: '...')
+        .memo
+          メモ→
+          = manga.memo.truncate(45, omission: '...')
         
         

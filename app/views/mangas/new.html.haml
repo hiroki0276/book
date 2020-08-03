@@ -1,11 +1,13 @@
-%h2 マンガ新規登録画面
-= link_to "トップページに戻る", :root, class: 'Button'
+.page
+  .page_title 
+    マンガ新規登録画面
+  = link_to "トップページに戻る", :root, class: 'Button'
 
 
-= form_with model: @manga, local: true do |form|
-  = form.text_field :title, placeholder: 'タイトル'
-  = form.text_field :author,placeholder: '作者'
-  = form.text_field :volume,placeholder: '巻数'
-  = form.text_field :memo, placeholder: "メモ"
-  = form.submit'Save'
+  = form_with model: @manga, local: true do |form|
+    = form.text_field :title, placeholder: 'タイトル'
+    = form.text_field :author,placeholder: '作者'
+    = form.text_field :volume,placeholder: '巻数'
+    = form.text_area :memo, placeholder: "メモ", class: "edit_memo"
+    = form.submit'Save'
 
