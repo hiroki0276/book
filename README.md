@@ -1,24 +1,33 @@
 # README
+## マンガチェック
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+https://mangacheck.herokuapp.com/
 
-Things you may want to cover:
+- 自分の所持しているマンガや書籍を管理することができます。
+- 新しく書籍を購入したらすぐに更新しましょう。
+- ふらっと立ち寄った本屋で新刊を発見した時、既に買った本かどうか迷うことがなくなります。
+- そしてとりあえず買ったものの家に帰ると同じものがあったという悲劇をなくしましょう！
 
-* Ruby version
+## テストアカウント
+こちらをご使用ください
 
-* System dependencies
+- メールアドレス  
+tanaka@tanaka
 
-* Configuration
+- パスワード  
+12345678
 
-* Database creation
+## 仕様
+- macOS Catalina 10.15.5
+- ruby 2.6.5
+- rails 6.0.3.2
+- Postgresql
+- Heroku
 
-* Database initialization
+## 主な機能
+### ユーザー
+- ユーザー登録、ログイン、ログアウト
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 書籍リスト
+- 作成、書籍名と作者名と巻数とメモの編集、削除

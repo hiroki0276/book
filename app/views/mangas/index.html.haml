@@ -1,10 +1,10 @@
 
 .header
-  .weather
+  .rakuten
     %a{:href => "https://hb.afl.rakuten.co.jp/hsc/1cd5e9d3.bbf92c92.1cd5e9b0.54beed16/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjowLCJjYXQiOiIxNCIsImJhbiI6IjM4NDk0NSJ9", :rel => "nofollow sponsored noopener", :style => "word-wrap:break-word;", :target => "_blank"}
       %img{:alt => "", :border => "0", :src => "https://hbb.afl.rakuten.co.jp/hsb/1cd5e9d3.bbf92c92.1cd5e9b0.54beed16/?me_id=1&me_adv_id=384945&t=pict", :style => "margin:15px", :title => ""}/
-
-    -# 天気欄<br> タスク <br>検索ユーザー制限<br>検索欄作成<br>天気欄作成<br>編集画面、新規作成画面等ビューの調整
+    %a{:href => "https://hb.afl.rakuten.co.jp/hsc/1cd5f7ea.92fe6b56.1cd5e9b0.54beed16/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjowLCJjYXQiOiIxIiwiYmFuIjoiNjQ0MDgzIn0%3D", :rel => "nofollow sponsored noopener", :style => "word-wrap:break-word;", :target => "_blank"}
+      %img{:alt => "", :border => "0", :src => "https://hbb.afl.rakuten.co.jp/hsb/1cd5f7ea.92fe6b56.1cd5e9b0.54beed16/?me_id=1213310&me_adv_id=644083&t=pict", :style => "margin:15px", :title => ""}/
 
   .info
     .btn-cross
@@ -16,20 +16,15 @@
   = form_with(url: search_mangas_path, local: true, method: :get, class: "search-form") do |form|
     = form.text_field :keyword, placeholder: "マンガを検索する　＊タイトルか作者を入力", class: "search-input"
     = form.submit "検索", class: "search-btn"
-  
 
-
-  
-      
 .main
-
   .book
     - current_user.mangas.each do |manga| 
       .manga 
         .input
           = link_to '編集', edit_manga_path(manga.id)
           = link_to '削除', manga_path(manga.id), method: :delete,data: { confirm: "【確認】マンガを削除してもよろしいですか？" }
-        .test タイトル/作者/巻数
+        .information タイトル/作者/巻数
         = manga.title.truncate(20, omission: '...')
         = manga.author
         /
@@ -40,5 +35,3 @@
         .memo
           メモ→
           = manga.memo.truncate(45, omission: '...')
-        
-        
