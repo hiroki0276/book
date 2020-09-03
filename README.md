@@ -31,3 +31,28 @@ tanaka@tanaka
 
 ### 書籍リスト
 - 作成、書籍名と作者名と巻数とメモの編集、削除
+
+
+## データベース
+
+## mangasテーブル
+|column|Type|Options|
+|------|----|-------|
+|title|string|null:false|
+|author|string|null:false|
+|volume|string|null:false|
+|memo|string|-----|
+|user_id|references|null:false,foreign_key:true|
+
+### アソシエーション
+- belongs_to :user
+
+## usersテーブル
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|mail|string|null: false, unique: true|
+|password|string|null: false|
+
+### Association
+- has_many :mangas
