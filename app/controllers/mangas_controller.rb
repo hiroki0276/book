@@ -15,6 +15,12 @@ class MangasController < ApplicationController
 
   def edit
     @manga = Manga.find(params[:id])
+    if user_signed_in?
+      if current_user.id == @manga.user_id
+      else
+        redirect_to root_path
+      end
+    end
   end
 
   def update
